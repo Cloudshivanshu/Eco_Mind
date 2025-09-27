@@ -1,0 +1,93 @@
+ body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+        }
+
+        /* Navbar */
+        nav {
+          background-color: #333;
+          color: white;
+          padding: 2rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        nav a {
+          color: white;
+          margin: 0 10px;
+          text-decoration: none;
+        }
+        nav a:hover {
+          text-decoration: underline;
+        }
+
+        /* Carousel container */
+        .carousel-container {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          padding: 2rem 0;
+          background: #f8f9fa;
+        }
+
+        /* Cards wrapper */
+        .cards-wrapper {
+          display: flex;
+          overflow-x: hidden;
+          scroll-behavior: smooth;
+          width: 70%;
+        }
+
+        /* Individual card */
+        .card {
+          min-width: 30%;
+          margin: 0 10px;
+          background: white;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+          border-radius: 10px;
+          text-align: center;
+          padding: 2rem;
+          flex-shrink: 0;
+        }
+
+        /* Arrows */
+        .arrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: #333;
+          color: white;
+          border: none;
+          font-size: 2rem;
+          cursor: pointer;
+          padding: 0.5rem 1rem;
+          border-radius: 50%;
+          opacity: 0.7;
+        }
+        .arrow:hover {
+          opacity: 1;
+        }
+        .arrow-left {
+          left: 5%;
+        }
+        .arrow-right {
+          right: 5%;
+        }
+
+        /* Footer */
+        footer {
+          background-color: #333;
+          color: white;
+          text-align: center;
+          padding: 1rem;
+        }
+
+.custom-tooltip {
+  --bs-tooltip-bg: #6f42c1;
+  --bs-tooltip-color: #fff;
+}
