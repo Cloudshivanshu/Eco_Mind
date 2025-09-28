@@ -1,91 +1,237 @@
- body {
-          margin: 0;
-          font-family: Arial, sans-serif;
-          display: flex;
-          flex-direction: column;
-          min-height: 100vh;
-        }
+/* ---------------------------------- */
+/* NEW CONTINUOUS ANIMATION */
+/* ---------------------------------- */
+@keyframes pulsing-grow {
 
-        /* Navbar */
-        nav {
-          background-color: #333;
-          color: white;
-          padding: 2rem;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-        nav a {
-          color: white;
-          margin: 0 10px;
-          text-decoration: none;
-        }
-        nav a:hover {
-          text-decoration: underline;
-        }
+  0%,
+  100% {
+    transform: scale(1);
+    /* Normal size */
+  }
 
-        /* Carousel container */
-        .carousel-container {
-          flex: 1;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          position: relative;
-          padding: 2rem 0;
-          background: #f8f9fa;
-        }
+  50% {
+    transform: scale(1.1);
+    /* 10% larger */
+  }
+}
 
-        /* Cards wrapper */
-        .cards-wrapper {
-          display: flex;
-          overflow-x: hidden;
-          scroll-behavior: smooth;
-          width: 70%;
-        }
+/* ---------------------------------- */
 
-        /* Individual card */
-        .card {
-          min-width: 30%;
-          margin: 0 10px;
-          background: white;
-          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-          border-radius: 10px;
-          text-align: center;
-          padding: 2rem;
-          flex-shrink: 0;
-        }
 
-        /* Arrows */
-        .arrow {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          background: #333;
-          color: white;
-          border: none;
-          font-size: 2rem;
-          cursor: pointer;
-          padding: 0.5rem 1rem;
-          border-radius: 50%;
-          opacity: 0.7;
-        }
-        .arrow:hover {
-          opacity: 1;
-        }
-        .arrow-left {
-          left: 5%;
-        }
-        .arrow-right {
-          right: 5%;
-        }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  /* Changed from side-by-side to top-to-bottom layout */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: visible;
+  background-color: #4a75ff;
+}
 
-        /* Footer */
-        footer {
-          background-color: #333;
-          color: white;
-          text-align: center;
-          padding: 1rem;
-        }
+/* ---------------------------------- */
+/* Horizontal Navigation Bar Styles */
+/* ---------------------------------- */
+
+.top-navbar {
+  width: 100%;
+  background: #00e1ff;
+  background: linear-gradient(0deg, rgba(0, 225, 255, 1) 0%, rgba(157, 209, 44, 1) 64%, rgba(255, 166, 0, 1) 100%);
+  padding: 8px 20px;
+  /* Updated shadow for large, smooth blur that overlays the content */
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.7);
+  flex-shrink: 0;
+  /* Key change: Use flex to align children (logo and icon group) */
+  display: flex;
+  align-items: center;
+  /* Pushes logo (left) and nav-icons (right) to opposite ends */
+  justify-content: space-between;
+  /* CRITICAL: Ensures the navbar and shadow are rendered on top of content */
+  position: relative;
+  z-index: 10;
+  height: 80px;
+}
+
+/* Logo Styles (Left side) */
+.logo-container {
+  display: flex;
+  /* Helps vertically center the image */
+  align-items: center;
+}
+
+.app-logo {
+  /* Set a reasonable height for the logo image */
+  height: 80px;
+  width: auto;
+}
+
+/* Right-aligned Icons Container */
+.nav-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  /* FIX: Removed 'filter: contrast(20);' to disable the Gooey Effect */
+  filter: none;
+  /* Explicitly ensure no contrast filter remains */
+}
+
+.nav-item {
+  margin-left: 25px;
+  /* Spacing between the icons (Login, Signup, More) */
+}
+
+.nav-item a {
+  color: #ffffff;
+  font-size: 16px;
+  /* Text size */
+  display: flex;
+  /* Makes icon and text align vertically */
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  border-radius: 12px;
+  text-decoration: none;
+  /* Remove underline from links */
+  /* FIX: Restored the short transition time for instant "Fast Snap" effect */
+  transition: all 0.05s ease-out;
+  padding: 8px 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.nav-item a i {
+  font-size: 24px;
+  /* Icon size */
+  margin-bottom: 2px;
+  /* Space between icon and text */
+}
+
+/* Hide the separator since we only have three items on the right */
+.nav-item.separator {
+  display: none;
+}
+
+/* Hover Animation: Creates the blue block effect */
+.nav-item a:hover {
+  background-color: #4a75ff;
+  color: white;
+  box-shadow: 0 4px 10px rgba(74, 117, 255, 0.3);
+  /* Ensure transform is set to none for max snap speed */
+  transform: none;
+  border-radius: 10px;
+  /* Final vertical size adjustment */
+  padding: 5px 10px;
+  z-index: 2;
+  margin: -2px;
+  /* FIX: Removed 'filter: blur(3px);' to disable the Gooey Effect */
+  filter: none;
+}
+
+/* Apply the Pulsing Grow animation to the icon on hover */
+.nav-item a:hover i {
+  animation: pulsing-grow 1s ease-in-out infinite;
+}
+
+/* ---------------------------------- */
+/* Main Content and Carousel Styles */
+/* ---------------------------------- */
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  /* min-height adjusted for 80px navbar height (no margin) */
+  min-height: calc(100vh - 80px);
+  /* Ensures no margin pushes content down, allowing the shadow to blend seamlessly */
+  margin-top: 0;
+  overflow-x: visible;
+}
+
+/* Carousel container */
+.carousel-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 2rem 0;
+  background: url('Assets/Images/crack.png');
+  width: 100%;
+  overflow: visible;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Cards wrapper */
+.cards-wrapper {
+  display: flex;
+  scroll-behavior: smooth;
+  max-width: 90%;
+  width: 100%;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 0 60px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.cards-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual card */
+.card {
+  min-width: 320px;
+  width: 26rem;
+  margin: 0 10px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  padding: 2rem;
+  flex-shrink: 0;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #333;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  opacity: 0.7;
+  z-index: 20;
+}
+
+.arrow:hover {
+  opacity: 1;
+}
+
+.arrow-left {
+  left: 20px;
+}
+
+.arrow-right {
+  right: 20px;
+} 
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
 
 .custom-tooltip {
   --bs-tooltip-bg: #6f42c1;
