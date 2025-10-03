@@ -29,7 +29,7 @@ body {
   background: linear-gradient(0deg, rgba(0, 225, 255, 1) 0%, rgba(157, 209, 44, 1) 64%, rgba(255, 166, 0, 1) 100%);
   padding: 8px 20px;
   /* Updated shadow for large, smooth blur that overlays the content */
-  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 30px 50px rgba(102, 205, 255,0.9);
   flex-shrink: 0;
   /* Key change: Use flex to align children (logo and icon group) */
   display: flex;
@@ -37,8 +37,9 @@ body {
   /* Pushes logo (left) and nav-icons (right) to opposite ends */
   justify-content: space-between;
   /* CRITICAL: Ensures the navbar and shadow are rendered on top of content */
-  position: relative;
-  z-index: 10;
+  position: sticky;
+  top:0;
+  z-index: 1000;
   height: 80px;
 }
 
@@ -106,7 +107,7 @@ body {
 /* Hover Animation: Creates the blue block effect */
 .nav-item a:hover {
   background-color: #4a75ff;
-  color: white;
+  color: black;
   box-shadow: 0 4px 10px rgba(74, 117, 255, 0.3);
   /* Ensure transform is set to none for max snap speed */
   transform: none;
@@ -141,6 +142,8 @@ body {
   text-align: center;
   padding: 2rem 1rem;       /* Gap from top and bottom */
   background: #ccffcc;
+  position:relative;
+  z-index:1;
 }
 
 .ambition .image img {
@@ -300,3 +303,200 @@ footer {
      padding: 0.8rem 0.5rem; /* Less padding */
    }
  }
+
+ /* --- MODIFIED: Contained Menu Styling & Animation --- */
+
+ /* Base Menu Container - Not full screen */
+.full-screen-menu {
+    position: absolute; /* Allows it to overlap content */
+    top: 80px; /* Position it exactly below your 80px tall navbar */
+    left: 0;
+    width: 100%; /* Spans the full width */
+    height: auto;
+    max-height: calc(100vh - 80px);
+    overflow-y: hidden;
+
+    background-color: #e6f7ff;
+    border-radius: 0 0 20px 20px; /* Rounded corners only at the bottom */
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 50; /* Higher than content (1) but lower than navbar (100) */
+
+    /* Initial Animation State: Hidden above the 'top: 80px' line */
+    transform: translateY(-100%);
+    opacity: 0;
+
+    /* Animation speed for the slide effect */
+    transition: transform 0.4s ease-out, opacity 0.8s ease-out;
+
+    pointer-events: none; /* Disable interaction when closed */
+}
+
+/* Animation end: Slide down into view */
+.full-screen-menu.is-open {
+    transform: translateY(0); /* Slide down to the 'top: 80px' position */
+    opacity: 1;
+    pointer-events: auto; /* Enable clicks inside when open */
+}
+
+/* Close Button */
+.close-menu-button {
+    position: absolute;
+    top: 10px;
+    right: 20px; /* Position it on the top right of the menu box */
+    z-index: 51; /* Keep it above the cards */
+    background-color: #ffd9b3 !important;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-family: 'Comic Neue', cursive;
+    box-shadow: 0 4px #66ffcc;
+    transition: all 0.3s;
+}
+
+.close-menu-button:active {
+    transform: translateY(5px);
+}
+
+.close-menu-button:hover{
+background-color: #ffbf80 !important;
+}
+/* Menu Content Grid */
+.menu-content-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 20px;
+    padding-top: 50px; /* Add space at the top to clear the close button */
+    padding-bottom: 20px; /* Add padding at the bottom */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.menu-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: left;
+    text-decoration: none;
+    color: #333;
+    border: 2px solid #9dd12c; /* Eco-friendly border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+    /* Hover animation setup */
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+/* Menu Card Hover Animation (Upwards Movement) */
+.menu-card:hover {
+    transform: translateY(-8px); /* Moves the card 8px up */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow when lifted */
+    background-color: #f0ffdb;
+}
+
+.menu-card h3, .menu-card h4 {
+    font-family: 'Comic Neue', cursive;
+    color: #4a75ff; /* Blue accent */
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.menu-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: #00e1ff; /* Teal accent */
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Make one card span two rows (like the 'Features' card) */
+.large-card {
+    grid-row: span 2;
+    grid-column: span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.hori-card{
+    grid-row: span 1;
+    grid-column: span 2;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items:center;
+    padding:20px 30px;
+    text-align:left;
+}
+.hori-card .text-content{
+display:flex;
+flex-direction:column;
+margin-left:15px;
+flex-grow:1;
+}
+.hori-card .text-content h4 {
+  margin-bottom:0;
+}
+.hori-card .text-content p {
+    white-space: normal;
+       /* Remove default margins that might push it sideways */
+       margin-top: 5px;
+       margin-bottom: 0;
+       line-height: 1.2;
+}
+/* ======================================= */
+/* --- Media Queries (Responsiveness) --- */
+/* ======================================= */
+
+@media (max-width: 768px) {
+    /* Navbar collapse */
+    .top-navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+    .nav-icons {
+        margin-top: 10px;
+    }
+
+    /* Menu for small screens */
+    .full-screen-menu {
+        /* Need to recalculate based on the new collapsed navbar height */
+        top: 130px; /* Example adjustment, may need fine-tuning */
+        border-radius: 0 0 10px 10px;
+    }
+    .menu-content-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 15px;
+    }
+    .large-card {
+        grid-row: span 1; /* Doesn't span 2 rows on mobile */
+    }
+    .arrow {
+        font-size: 1.5rem;
+        padding: 0.3rem 0.6rem;
+    }
+    .arrow-left {
+        left: 5px;
+    }
+    .arrow-right {
+        right: 5px;
+    }
+    .carousel-container {
+        padding: 1rem 0;
+    }
+    .card {
+        padding: 1rem;
+    }
+    footer {
+        font-size: 0.85rem;
+        /* Slightly smaller text */
+        padding: 0.8rem 0.5rem;
+        /* Less padding */
+    }
+}
