@@ -16,23 +16,23 @@
 
 <body>
 
-    <nav class="top-navbar">
-        <div class="logo-container">
-            <a href="/"><img src="Assets/Images/logoBG.png" alt="Eco Mind Logo" class="app-logo"></a>
-        </div>
+<nav class="top-navbar">
+    <div class="logo-container">
+        <a href="/"><img src="Assets/Images/logoBG.png" alt="Eco Mind Logo" class="app-logo"></a>
+    </div>
 
-        <ul class="nav-icons">
-            <li class="nav-item">
-                <a href="#"><i class="bi bi-box-arrow-in-right"></i><span class="nav-text">Login</span></a>
-            </li>
-            <li class="nav-item">
-                <a href="#"><i class="bi bi-person-plus"></i><span class="nav-text">Signup</span></a>
-            </li>
-            <li class="nav-item">
-                <a href="#"><i class="bi bi-three-dots"></i><span class="nav-text">More</span></a>
-            </li>
-        </ul>
-    </nav>
+    <ul class="nav-icons">
+        <li class="nav-item">
+            <a href="#"><i class="bi bi-box-arrow-in-right"></i><span class="nav-text">Login</span></a>
+        </li>
+        <li class="nav-item">
+            <a href="#"><i class="bi bi-person-plus"></i><span class="nav-text">Signup</span></a>
+        </li>
+        <li class="nav-item">
+            <a href="#" id="openMenuButton"><i class="bi bi-three-dots"></i><span class="nav-text">Menu</span></a>
+        </li>
+    </ul>
+</nav>
 
 <div class="ambition">
     <div class="image">
@@ -43,94 +43,147 @@
         This site is dedicated to helping you learn how to care for and
         protect our planet in an engaging and educational way. Explore
         games, activities, and resources that teach the importance of
-        recycling, saving energy, protecting animals, and so much more
+        recycling, saving energy, protecting animals, and so much more.
     </div>
 </div>
 
-    <div class="main-content">
-        <div class="carousel-container">
-            <button class="arrow arrow-left" onclick="scrollCards(-1)">&#10094;</button>
-            <div class="cards-wrapper" id="cards">
+<div class="main-content">
+    <div class="carousel-container">
+        <button class="arrow arrow-left" onclick="scrollCards(-1)">&#10094;</button>
+        <div class="cards-wrapper" id="cards">
 
-                <div class="card" style="width: 26rem;">
-                    <img src="Assets/Images/nahh.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card’s content.</p>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top"
+            <div class="card" style="width: 26rem;">
+                <img src="Assets/Images/nahh.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the
+                        card’s content.</p>
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top"
                             data-bs-custom-class="custom-tooltip" data-bs-title="Click here to play this card.">
-                            Proced
-                        </button>
-                    </div>
+                        Procede
+                    </button>
                 </div>
-
-                <div class="card" style="width: 26rem;">
-                    <img src="Assets/Images/uhh.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card’s content.</p>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top"
-                            data-bs-custom-class="custom-tooltip" data-bs-title="Click here to play this card.">
-                            Proced
-                        </button>
-                    </div>
-                </div>
-
-                <div class="card" style="width: 26rem;">
-                    <img src="Assets/Images/ahh.gif" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card’s content.</p>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top"
-                            data-bs-custom-class="custom-tooltip" data-bs-title="Click here to play this card.">
-                            Proced
-                        </button>
-                    </div>
-                </div>
-
-                <div class="card" style="width: 26rem;">
-                    <img src="Assets/Images/cardimage.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card’s content.</p>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top"
-                            data-bs-custom-class="custom-tooltip" data-bs-title="Click here to play this card.">
-                            Proced
-                        </button>
-                    </div>
-                </div>
-
-                <div class="card" style="width: 26rem;">
-                    <img src="Assets/Images/nahh.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card’s content.</p>
-                        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top"
-                            data-bs-custom-class="custom-tooltip" data-bs-title="Click here to play this card.">
-                            Proced
-                        </button>
-                    </div>
-                </div>
-
             </div>
-            <button class="arrow arrow-right" onclick="scrollCards(1)">&#10095;</button>
+
+            <div class="card" style="width: 26rem;">
+                <img src="Assets/Images/uhh.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the
+                        card’s content.</p>
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-custom-class="custom-tooltip" data-bs-title="Click here to play this card.">
+                        Procede
+                    </button>
+                </div>
+            </div>
+
+            <div class="card" style="width: 26rem;">
+                <img src="Assets/Images/ahh.gif" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the
+                        card’s content.</p>
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-custom-class="custom-tooltip" data-bs-title="Click here to play this card.">
+                        Procede
+                    </button>
+                </div>
+            </div>
+
+            <div class="card" style="width: 26rem;">
+                <img src="Assets/Images/cardimage.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the
+                        card’s content.</p>
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-custom-class="custom-tooltip" data-bs-title="Click here to play this card.">
+                        Procede
+                    </button>
+                </div>
+            </div>
+
+            <div class="card" style="width: 26rem;">
+                <img src="Assets/Images/nahh.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the
+                        card’s content.</p>
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-custom-class="custom-tooltip" data-bs-title="Click here to play this card.">
+                        Procede
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <button class="arrow arrow-right" onclick="scrollCards(1)">&#10095;</button>
+    </div>
+
+    <footer>
+        &copy; 2025 ECO MIND. All rights reserved.
+    </footer>
+</div>
+<div class="full-screen-menu" id="fullScreenMenu">
+
+    <button class="btn close-menu-button" id="closeMenuButton">
+        <i class="bi bi-x-circle"></i> CLOSE MENU
+    </button>
+
+    <div class="menu-content-grid">
+
+        <div class="menu-card large-card card-explore">
+            <span class="card-icon"><i class="bi bi-globe-americas"></i></span>
+            <h3>Explore Eco Mind</h3>
+            <p>Learn about our mission to educate and inspire the next generation of environmentalists.</p>
         </div>
 
-        <footer>
-            &copy; 2025 ECO MIND. All rights reserved.
-        </footer>
+        <a href="#" class="menu-card small-card">
+            <span class="card-icon"><i class="bi bi-shop"></i></span>
+            <h4>Eco Mind MarketPlace</h4>
+            <p>Grab the essentials to save the Earth.</p>
+        </a>
+
+        <a href="#" class="menu-card small-card">
+            <span class="card-icon"><i class="bi bi-patch-check"></i></span>
+            <h4>Badges</h4>
+            <p>Show them your badges, tell them who you are!</p>
+        </a>
+
+        <a href="#" class="menu-card small-card">
+            <span class="card-icon"><i class="bi bi-award"></i></span>
+            <h4>Achievments</h4>
+            <p>Look at what you have achieved till now.</p>
+        </a>
+
+        <a href="#" class="menu-card small-card">
+            <span class="card-icon"><i class="bi bi-headset"></i></span>
+            <h4>Contact Us</h4>
+            <p>You cannot contact us. LAMO</p>
+        </a>
+
+        <a href="#" class="menu-card small-card">
+            <span class="card-icon"><i class="bi bi-journal-text"></i></span>
+            <h4>Eco Articles</h4>
+            <p>Learn the top articles published by top organisations.</p>
+        </a>
+        <a href="#" class="menu-card hori-card">
+            <span class="card-icon"><i class="bi bi-people"></i></span>
+            <h4>Contribute</h4>
+            <p>Support the planet's heroes! Donate to NGOs and
+                amplify their efforts in conservation and education.</p>
+        </a>
+
     </div>
-    <script src="script.js"></script>
+</div>
+
+<script src="script.js"></script>
 </body>
 
 </html>
