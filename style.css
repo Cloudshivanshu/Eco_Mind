@@ -344,7 +344,7 @@ footer {
     position: absolute;
     top: 10px;
     right: 20px; /* Position it on the top right of the menu box */
-    z-index: 51; /* Keep it above the cards */
+    z-index: 2000; /* Keep it above the cards */
     background-color: #ffd9b3 !important;
     color: white;
     font-weight: bold;
@@ -469,10 +469,14 @@ flex-grow:1;
         /* Need to recalculate based on the new collapsed navbar height */
         top: 130px; /* Example adjustment, may need fine-tuning */
         border-radius: 0 0 10px 10px;
+        max-height: calc(100vh - 130px);
+        overflow-y: auto; /* ensures scrolling works on mobile */
     }
     .menu-content-grid {
         grid-template-columns: 1fr; /* Single column on mobile */
         gap: 15px;
+        padding-left: 15px;  /* more breathing space on left/right */
+        padding-right: 15px;
     }
     .large-card {
         grid-row: span 1; /* Doesn't span 2 rows on mobile */
@@ -499,4 +503,12 @@ flex-grow:1;
         padding: 0.8rem 0.5rem;
         /* Less padding */
     }
+    .close-menu-button {
+          position: sticky; /* remains visible while scrolling */
+          top: 45px;
+          right: 10px;
+          font-size: 0.9rem;
+          padding: 6px 12px;
+          z-index: 2002;
+      }
 }

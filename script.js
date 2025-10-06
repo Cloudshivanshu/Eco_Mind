@@ -1,5 +1,3 @@
-
-
 function scrollCards(direction) {
     const cardsWrapper = document.getElementById('cards');
     const cardWidth = cardsWrapper.querySelector('.card').offsetWidth + 20; // card + margin
