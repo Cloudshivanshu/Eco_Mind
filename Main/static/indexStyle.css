@@ -1,0 +1,444 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: hwb(0 0% 98%);
+    transition: background-color 0.5s, color 0.5s;
+    overflow-x: hidden;
+}
+
+.top-navbar {
+    background: #039130c4;
+    padding: 8px 20px;
+    /* Updated shadow for large, smooth blur that overlays the content */
+    box-shadow: 0 10px 30px rgb(0, 255, 98);
+    flex-shrink: 0;
+    /* Key change: Use flex to align children (logo and icon group) */
+    display: flex;
+    align-items: center;
+    /* Pushes logo (left) and nav-icons (right) to opposite ends */
+    justify-content: space-between;
+    /* CRITICAL: Ensures the navbar and shadow are rendered on top of content */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 80px;
+}
+
+@media (max-width: 768px) {
+    .top-navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 10px 20px;
+    }
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    /* prevents it from shrinking or stretching */
+}
+
+.logo-container a {
+    display: flex;
+    align-items: center;
+}
+
+.app-logo {
+    max-height: 60px !important;
+    /* restrict vertical size */
+    height: auto !important;
+    width: auto !important;
+    display: block;
+    object-fit: contain;
+}
+
+/* Right-aligned Icons Container */
+.nav-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    /* FIX: Removed 'filter: contrast(20);' to disable the Gooey Effect */
+    filter: none;
+    /* Explicitly ensure no contrast filter remains */
+}
+
+.nav-item {
+    margin-left: 25px;
+    /* Spacing between the icons (Login, Signup, More) */
+    margin-right: 25px;
+}
+
+.nav-item a {
+    color: #ffffff;
+    font-size: 16px;
+    /* Text size */
+    display: flex;
+    /* Makes icon and text align vertically */
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    border-radius: 12px;
+    text-decoration: none;
+    /* Remove underline from links */
+    /* FIX: Restored the short transition time for instant "Fast Snap" effect */
+    transition: all 0.05s ease-out;
+    padding: 8px 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.nav-item a i {
+    font-size: 24px;
+    /* Icon size */
+    margin-bottom: 2px;
+    /* Space between icon and text */
+}
+
+/* Hide the separator since we only have three items on the right */
+.nav-item.separator {
+    display: none;
+}
+
+/* Hover Animation: Creates the blue block effect */
+.nav-item a:hover {
+    background-color: #4a75ff;
+    color: black;
+    transform: none;
+    border-radius: 10px;
+    /* Final vertical size adjustment */
+    padding: 5px 10px;
+    z-index: 2;
+    margin: 0;
+    /* FIX: Removed 'filter: blur(3px);' to disable the Gooey Effect */
+    filter: none;
+}
+
+/* Apply the Pulsing Grow animation to the icon on hover */
+.nav-item a:hover i {
+    animation: pulsing-grow 1s ease-in-out infinite;
+}
+
+.login-btn {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #1b5e20;
+}
+
+/* --- START BUTTON --- */
+.start-section {
+    margin: 40px;
+}
+
+.start-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.start-btn:hover {
+    background-color: #2e7d32;
+}
+
+.content-box {
+    margin: 30px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 900px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* --- LOGIN MODAL --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.close {
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+    color: #999;
+}
+
+.close:hover {
+    color: black;
+}
+
+.login-submit {
+    width: 100%;
+    background-color: #43a047;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-submit:hover {
+    background-color: #2e7d32;
+}
+
+.full-screen-menu {
+    position: absolute;
+    /* Allows it to overlap content */
+    top: 120px;
+    /* Position it exactly below your 80px tall navbar */
+    left: 0;
+    width: 100%;
+    /* Spans the full width */
+    height: auto;
+    max-height: calc(100vh - 80px);
+    overflow-y: hidden;
+
+    background-color: #e6f7ff;
+    border-radius: 0 0 20px 20px;
+    /* Rounded corners only at the bottom */
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 50;
+    /* Higher than content (1) but lower than navbar (100) */
+
+    /* Initial Animation State: Hidden above the 'top: 80px' line */
+    transform: translateY(-100%);
+    opacity: 0;
+
+    /* Animation speed for the slide effect */
+    transition: transform 0.4s ease-out, opacity 0.8s ease-out;
+
+    pointer-events: none;
+    /* Disable interaction when closed */
+}
+
+/* Animation end: Slide down into view */
+.full-screen-menu.is-open {
+    transform: translateY(0);
+    /* Slide down to the 'top: 80px' position */
+    opacity: 1;
+    pointer-events: auto;
+    /* Enable clicks inside when open */
+}
+
+/* Close Button */
+.close-menu-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    /* Position it on the top right of the menu box */
+    z-index: 2000;
+    /* Keep it above the cards */
+    background-color: #fcbe80 !important;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 8px 15px;
+    margin-right: 50px;
+    border-radius: 8px;
+    font-family: 'Comic Neue', cursive;
+    box-shadow: 0 4px #66ffcc;
+    transition: all 0.3s;
+}
+
+.close-menu-button:active {
+    transform: translateY(9px);
+}
+
+.close-menu-button:hover {
+    background-color: #f5a14e !important;
+}
+
+/* Menu Content Grid */
+.menu-content-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Three columns */
+    gap: 20px;
+    padding-top: 50px;
+    /* Add space at the top to clear the close button */
+    padding-bottom: 20px;
+    /* Add padding at the bottom */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.menu-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: left;
+    text-decoration: none;
+    color: #333;
+    border: 2px solid #9dd12c;
+    /* Eco-friendly border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+    /* Hover animation setup */
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+/* Menu Card Hover Animation (Upwards Movement) */
+.menu-card:hover {
+    transform: translateY(-8px);
+    /* Moves the card 8px up */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    /* Stronger shadow when lifted */
+    background-color: #f0ffdb;
+}
+
+.menu-card h3,
+.menu-card h4 {
+    font-family: 'Comic Neue', cursive;
+    color: #4a75ff;
+    /* Blue accent */
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.menu-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: #00e1ff;
+    /* Teal accent */
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Make one card span two rows (like the 'Features' card) */
+.large-card {
+    grid-row: span 2;
+    grid-column: span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hori-card {
+    grid-row: span 1;
+    grid-column: span 2;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 30px;
+    text-align: left;
+}
+
+.hori-card .text-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    flex-grow: 1;
+}
+
+.hori-card .text-content h4 {
+    margin-bottom: 0;
+}
+
+.hori-card .text-content p {
+    white-space: normal;
+    /* Remove default margins that might push it sideways */
+    margin-top: 5px;
+    margin-bottom: 0;
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+
+    /* Menu for small screens */
+    .full-screen-menu {
+        /* Need to recalculate based on the new collapsed navbar height */
+        top: 130px;
+        /* Example adjustment, may need fine-tuning */
+        border-radius: 0 0 10px 10px;
+        max-height: calc(100vh - 130px);
+        overflow-y: auto;
+        /* ensures scrolling works on mobile */
+    }
+
+    .menu-content-grid {
+        grid-template-columns: 1fr;
+        /* Single column on mobile */
+        gap: 15px;
+        padding-left: 15px;
+        /* more breathing space on left/right */
+        padding-right: 15px;
+    }
+
+    .large-card {
+        grid-row: span 1;
+        /* Doesn't span 2 rows on mobile */
+    }
+
+    .close-menu-button {
+        position: sticky;
+        /* remains visible while scrolling */
+        top: 45px;
+        right: 10px;
+        font-size: 0.9rem;
+        padding: 6px 12px;
+        z-index: 2002;
+    }
+}
