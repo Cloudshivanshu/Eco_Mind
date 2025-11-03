@@ -71,7 +71,52 @@ document.addEventListener('DOMContentLoaded', () => {
 const tree = document.querySelector('.overlay-gif1');
 const bird = document.querySelector('.birdGif');
 
-tree.addEventListener('mouseover', () => {
-  bird.style.display = 'block'; // show bird
-  bird.classList.add('fly');
+
+//tree animation
+const video = document.getElementById("videoBtn");
+const canvas = document.createElement("canvas");
+const ctx = canvas.getContext("2d");
+
+// let hasFlown = false; // prevent multiple triggers
+let videoLoaded = false;
+
+video.addEventListener("loadeddata", () => {
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    videoLoaded = true;
+    console.log(" Video loaded, ready!");
+});
+
+video.addEventListener("mousemove", (e) => {
+    if (!videoLoaded) return;
+
+    const rect = video.getBoundingClientRect();
+    const scaleX = video.videoWidth / rect.width;
+    const scaleY = video.videoHeight / rect.height;
+    const x = (e.clientX - rect.left) * scaleX;
+    const y = (e.clientY - rect.top) * scaleY;
+
+    // Draw current video frame to hidden canvas
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+    const pixel = ctx.getImageData(x, y, 1, 1).data;
+    const alpha = pixel[3]; // transparency channel
+
+    if (alpha > 10) {
+  
+        video.classList.add("hovered");
+        bird.style.display = 'block'; // show bird
+        bird.classList.add('fly');
+    } else {
+        video.classList.remove("hovered");
+    }
+});
+
+video.addEventListener("mouseleave", () => {
+    video.classList.remove("hovered");
+});
+
+bird.addEventListener("animationend", () => {
+  
+    bird.style.display = 'none';
+    bird.classList.remove('fly');
 });

@@ -32,27 +32,60 @@ body {
     left: 0%;
     width: 100%;
     height: auto;
-    pointer-events: auto; /* now hover works */
+    pointer-events: auto;
+    /* now hover works */
+    cursor: pointer;
+    z-index: 2004;
+}
+
+#videoBtn {
+    cursor: default;
+    transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+#videoBtn.hovered {
+    filter: brightness(1.4);
     cursor: pointer;
 }
 
+canvas{
+    pointer-events: none;
+}
+
 .birdGif {
-  position: absolute;
-  top: 80%;
-  left: 90%;
-  width: 120px;
-  display:none;
-  
+    position: absolute;
+    top: 80%;
+    left: 90%;
+    width: 120px;
+    display: none;
 }
 
 .fly {
-  animation: flyAway 2s ease-in forwards;
+    animation: flyAway 2s ease-in forwards;
 }
 
 @keyframes flyAway {
-  0%   { transform: translate(0, 0) scale(1); opacity: 1; }
-  50%  { transform: translate(-200px, -200px) scale(1); }
-  100% { transform: translate(-600px, -900px) scale(1); opacity: 1; }
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(-200px, -200px) scale(1);
+    }
+
+    100% {
+        transform: translate(-900px, -900px) scale(1);
+        opacity: 1;
+    } 
+}
+
+.squirel{
+     position: absolute;
+    top:108%;
+    left:3%;
+    height: 50px;
+    width: 50px;
 }
 
 .top-navbar {
@@ -178,7 +211,7 @@ body {
 }
 
 .start-btn {
-    background-color: #4CAF50;
+    background-color: #4caf4f;
     color: white;
     border: none;
     border-radius: 10px;
@@ -186,6 +219,7 @@ body {
     font-size: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    z-index: 5;
 }
 
 .start-btn:hover {
