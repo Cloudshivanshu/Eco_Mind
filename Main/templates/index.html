@@ -83,18 +83,115 @@
     </div>
   </div>
 
+  
+  <video autoplay loop muted playsinline src="{% static 'Assets/Images/trees.webm' %}" class="overlay-gif" alt="Animated trees"></video>
+  <img src="{% static 'Assets/Images/bird.gif' %}" alt="bird-gif" class="birdGif">
+  <video autoplay loop muted playsinline src="{% static 'Assets/Images/tree.webm' %}" class="overlay-gif1" id="videoBtn" alt="Animated tree"></video>
+    <img src="{% static 'Assets/Images/newsquirel.gif' %}" class="squirel" alt="squirelGif">
+
+
   <div class="start-section">
     <a href="/start">
       <button class="start-btn">Start</button>
     </a>
   </div>
 
-  <video autoplay loop muted playsinline src="{% static 'Assets/Images/trees.webm' %}" class="overlay-gif" alt="Animated trees"></video>
-  <img src="{% static 'Assets/Images/bird.gif' %}" alt="bird-gif" class="birdGif">
-  <video autoplay loop muted playsinline src="{% static 'Assets/Images/tree.webm' %}" class="overlay-gif1" alt="Animated tree"></video>
-
   <script src="{% static 'indexScript.js' %}"></script>
 
 </body>
 
 </html>
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixel-Perfect Hover on Video</title>
+<style>
+  body {
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  #videoBtn {
+    cursor: default;
+    transition: transform 0.15s ease, filter 0.15s ease;
+    width: 400px; /* set your own size */
+  }
+
+  #videoBtn.hovered {
+    transform: scale(1.1);
+    filter: brightness(1.3);
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<video id="videoBtn" src="trees.webm" autoplay loop muted playsinline></video>
+
+<script>
+const video = document.getElementById("videoBtn");
+const canvas = document.createElement("canvas");
+const ctx = canvas.getContext("2d");
+
+let videoLoaded = false;
+
+video.addEventListener("loadeddata", () => {
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  videoLoaded = true;
+  console.log("✅ Video loaded, ready!");
+});
+
+video.addEventListener("mousemove", (e) => {
+  if (!videoLoaded) return;
+
+  const rect = video.getBoundingClientRect();
+  const scaleX = video.videoWidth / rect.width;
+  const scaleY = video.videoHeight / rect.height;
+  const x = (e.clientX - rect.left) * scaleX;
+  const y = (e.clientY - rect.top) * scaleY;
+
+  // Draw current video frame to hidden canvas
+  ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+  const pixel = ctx.getImageData(x, y, 1, 1).data;
+  const alpha = pixel[3]; // transparency channel
+
+  if (alpha > 10) {
+    video.classList.add("hovered");
+  } else {
+    video.classList.remove("hovered");
+  }
+});
+
+video.addEventListener("mouseleave", () => {
+  video.classList.remove("hovered");
+});
+
+video.addEventListener("click", (e) => {
+  if (!videoLoaded) return;
+  const rect = video.getBoundingClientRect();
+  const scaleX = video.videoWidth / rect.width;
+  const scaleY = video.videoHeight / rect.height;
+  const x = (e.clientX - rect.left) * scaleX;
+  const y = (e.clientY - rect.top) * scaleY;
+
+  ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+  const alpha = ctx.getImageData(x, y, 1, 1).data[3];
+
+  if (alpha > 10) {
+    alert("Clicked on visible part of video!");
+  }
+});
+</script>
+
+</body>
+</html> -->
