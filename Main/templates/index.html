@@ -1,143 +1,99 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ecomind</title>
-  <link rel="stylesheet" href="{% static 'indexStyle.css' %}"> 
+  <link rel="stylesheet" href="{% static 'indexStyle.css' %}">
 </head>
+
 <body>
-  
-<!-- nav bar -->
+  <!-- nav bar -->
   <nav class="top-navbar">
     <div class="logo-container">
-        <a href="/"><img src="{% static 'Assets/Images/logoBG.png' %}" alt="Eco Mind Logo" class="app-logo"></a>
+      <a href="/"><img src="{% static 'Assets/Images/logoBG.png' %}" alt="Eco Mind Logo" class="app-logo"></a>
     </div>
 
     <ul class="nav-icons">
-        <li class="nav-item">
-            <a href="#"><i class="bi bi-box-arrow-in-right"></i><span class="nav-text">Login</span></a>
-        </li>
-        <li class="nav-item">
-            <a href="/admin"><i class="bi bi-person-plus"></i><span class="nav-text">Signup</span></a>
-        </li>
-        <li class="nav-item">
-            <a href="#" id="openMenuButton"><i class="bi bi-three-dots"></i><span class="nav-text">Menu</span></a>
-        </li>
+      <li class="nav-item">
+        <a href="#"><i class="bi bi-box-arrow-in-right"></i><span class="nav-text">Login</span></a>
+      </li>
+      <li class="nav-item">
+        <a href="/admin"><i class="bi bi-person-plus"></i><span class="nav-text">Signup</span></a>
+      </li>
+      <li class="nav-item">
+        <a href="#" id="openMenuButton"><i class="bi bi-three-dots"></i><span class="nav-text">Menu</span></a>
+      </li>
     </ul>
- </nav>
+  </nav>
 
- <!-- Menu button -->
- <div class="full-screen-menu" id="fullScreenMenu">
+  <!-- Menu button -->
+  <div class="full-screen-menu" id="fullScreenMenu">
 
     <button class="btn close-menu-button" id="closeMenuButton">
-        <i class="bi bi-x-circle"></i> CLOSE MENU
+      <i class="bi bi-x-circle"></i> CLOSE MENU
     </button>
 
     <div class="menu-content-grid">
 
-        <div class="menu-card large-card card-explore">
-            <span class="card-icon"><i class="bi bi-globe-americas"></i></span>
-            <h3>Explore Eco Mind</h3>
-            <p>Learn about our mission to educate and inspire the next generation of environmentalists.</p>
-        </div>
+      <div class="menu-card large-card card-explore">
+        <span class="card-icon"><i class="bi bi-globe-americas"></i></span>
+        <h3>Explore Eco Mind</h3>
+        <p>Learn about our mission to educate and inspire the next generation of environmentalists.</p>
+      </div>
 
-        <a href="#" class="menu-card small-card">
-            <span class="card-icon"><i class="bi bi-shop"></i></span>
-            <h4>Eco Mind MarketPlace</h4>
-            <p>Grab the essentials to save the Earth.</p>
-        </a>
+      <a href="#" class="menu-card small-card">
+        <span class="card-icon"><i class="bi bi-shop"></i></span>
+        <h4>Eco Mind MarketPlace</h4>
+        <p>Grab the essentials to save the Earth.</p>
+      </a>
 
-        <a href="#" class="menu-card small-card">
-            <span class="card-icon"><i class="bi bi-patch-check"></i></span>
-            <h4>Badges</h4>
-            <p>Show them your badges, tell them who you are!</p>
-        </a>
+      <a href="#" class="menu-card small-card">
+        <span class="card-icon"><i class="bi bi-patch-check"></i></span>
+        <h4>Badges</h4>
+        <p>Show them your badges, tell them who you are!</p>
+      </a>
 
-        <a href="#" class="menu-card small-card">
-            <span class="card-icon"><i class="bi bi-award"></i></span>
-            <h4>Achievments</h4>
-            <p>Look at what you have achieved till now.</p>
-        </a>
+      <a href="#" class="menu-card small-card">
+        <span class="card-icon"><i class="bi bi-award"></i></span>
+        <h4>Achievments</h4>
+        <p>Look at what you have achieved till now.</p>
+      </a>
 
-        <a href="#" class="menu-card small-card">
-            <span class="card-icon"><i class="bi bi-headset"></i></span>
-            <h4>Contact Us</h4>
-            <p>You cannot contact us. LAMO</p>
-        </a>
+      <a href="#" class="menu-card small-card">
+        <span class="card-icon"><i class="bi bi-headset"></i></span>
+        <h4>Contact Us</h4>
+        <p>You cannot contact us. LAMO</p>
+      </a>
 
-        <a href="#" class="menu-card small-card">
-            <span class="card-icon"><i class="bi bi-journal-text"></i></span>
-            <h4>Eco Articles</h4>
-            <p>Learn the top articles published by top organisations.</p>
-        </a>
-        <a href="#" class="menu-card hori-card">
-            <span class="card-icon"><i class="bi bi-people"></i></span>
-            <h4>Contribute</h4>
-            <p>Support the planet's heroes! Donate to NGOs and
-                amplify their efforts in conservation and education.</p>
-        </a>
+      <a href="#" class="menu-card small-card">
+        <span class="card-icon"><i class="bi bi-journal-text"></i></span>
+        <h4>Eco Articles</h4>
+        <p>Learn the top articles published by top organisations.</p>
+      </a>
+      <a href="#" class="menu-card hori-card">
+        <span class="card-icon"><i class="bi bi-people"></i></span>
+        <h4>Contribute</h4>
+        <p>Support the planet's heroes! Donate to NGOs and
+          amplify their efforts in conservation and education.</p>
+      </a>
 
-    </div>
-</div>
-
-  <!-- ✅ SINGLE START BUTTON -->
-   <div class="start-section">
-    
-
-  <div class="content-box">
-    <div id="content">
-      <h2>Welcome!</h2>
-      <p>Begin your eco-learning adventure by pressing Start.</p>
-      <img src="{% static 'images\ecomind logo.png' %}" alt="Learning with fun" width="300" height="200">
     </div>
   </div>
 
-  <!-- LOGIN MODAL -->
-  <div id="loginModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeLogin()">&times;</span>
-      <h2>Login</h2>
-      <input type="text" id="username" placeholder="Username">
-      <input type="password" id="password" placeholder="Password">
-      <button class="login-submit" onclick="login()">Login</button>
-    </div>
+  <div class="start-section">
+    <a href="/start">
+      <button class="start-btn">Start</button>
+    </a>
   </div>
 
-<script src="{% static 'indexScript.js' %}"></script>
+  <video autoplay loop muted playsinline src="{% static 'Assets/Images/trees.webm' %}" class="overlay-gif" alt="Animated trees"></video>
+  <video autoplay loop muted playsinline src="{% static 'Assets/Images/tree.webm' %}" class="overlay-gif1" alt="Animated tree"></video>
+
+  <script src="{% static 'indexScript.js' %}"></script>
 
 </body>
+
 </html>
-
-<div class="start-section">
-  <a href="/start">
-    <button class="start-btn">Start</button>
-  </a>
-</div>
-
-<!-- Add this inside <body> at the bottom, after your current content-box -->
-<div class="content-box">
-  <h1>Guide Box</h1>
-  <div id="tutorialGallery" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
-    <!-- Tutorial images added by developer -->
-    <div class="tutorial-item">
-      <h2>Ecomind</h2>
-      <p>EcoMind is a fun and interactive learning platform that teaches people — especially students — how to protect the environment through games, challenges, and quizzes.
-
-   Instead of just reading about pollution, recycling, or climate change, players in EcoMind experience how their choices impact the planet.
-   It turns environmental education into an exciting mission to make the Earth greener!</p>
-      <img src = "{%static 'images\a vibrant 2D game sc.png'%}" alt="Tutorial 1" width="200" height="200">
-      <p>Beginner for planting tree.</p>
-    </div>
-    <div class="tutorial-item">
-      <img src="{%static 'images\a child watering a p.png'%}"alt="Tutorial 2" width="200" height="200">
-      <p>for giving water to plant to grow</p>
-    </div>
-    <div class="tutorial-item">
-      <img src="{%static 'images\a child dumping plas.png'%}" alt="Tutorial 3" width="200" height="200">
-      <p>Master guide: plastic disposal.</p>
-    </div>
-  </div>
-</div>
-
