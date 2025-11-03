@@ -66,3 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleMenu(false);
     });
 });
+
+console.log("hello");
+
+console.log("Screen width: " + screen.width);
+console.log("Screen height: " + screen.height);
