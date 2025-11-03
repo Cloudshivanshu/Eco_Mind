@@ -67,7 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-console.log("hello");
+//bird animation
+const tree = document.querySelector('.overlay-gif1');
+const bird = document.querySelector('.birdGif');
 
-console.log("Screen width: " + screen.width);
-console.log("Screen height: " + screen.height);
+tree.addEventListener('mouseover', () => {
+  bird.style.display = 'block'; // show bird
+  bird.classList.add('fly');
+});
