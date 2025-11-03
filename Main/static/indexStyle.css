@@ -9,27 +9,52 @@ body {
     background-position: 0px 0px;
     /* move image focus */
     background-size: 100%;
-    height: 139.5vh;
+    height: max-content;
     margin: 0;
 }
 
 .overlay-gif {
     position: absolute;
-    top: 0%;  /* center vertically */
-    left: 0%; /* center horizontally */
-    width: 100%;  /* adjust as you want */
+    top: 0%;
+    /* center vertically */
+    left: 0%;
+    /* center horizontally */
+    width: 100%;
+    /* adjust as you want */
     height: auto;
-    pointer-events: none; /* ensures clicks pass through */
-  }
+    pointer-events: none;
+    /* ensures clicks pass through */
+}
 
-  .overlay-gif1 {
+.overlay-gif1 {
     position: absolute;
-    top: 0%;  /* center vertically */
-    left: 0%; /* center horizontally */
-    width: 100%;  /* adjust as you want */
+    top: 0%;
+    left: 0%;
+    width: 100%;
     height: auto;
-    pointer-events: none; /* ensures clicks pass through */
-  }
+    pointer-events: auto; /* now hover works */
+    cursor: pointer;
+}
+
+.birdGif {
+  position: absolute;
+  top: 80%;
+  left: 90%;
+  width: 120px;
+  display:none;
+  
+}
+
+.fly {
+  animation: flyAway 2s ease-in forwards;
+}
+
+@keyframes flyAway {
+  0%   { transform: translate(0, 0) scale(1); opacity: 1; }
+  50%  { transform: translate(-200px, -200px) scale(1); }
+  100% { transform: translate(-600px, -900px) scale(1); opacity: 1; }
+}
+
 .top-navbar {
     background: #039130c4;
     padding: 8px 20px;
