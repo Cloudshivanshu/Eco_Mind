@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include("Main_App.urls")),
     path('start/',include("Main_App.urls")),
-    path('beginner/',include("Main_App.urls"))
+    path('beginner/',include("Main_App.urls")),
+    path('game/',include("Main_App.urls"))
 ]

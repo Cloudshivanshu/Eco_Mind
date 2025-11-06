@@ -35,7 +35,7 @@ body {
     pointer-events: auto;
     /* now hover works */
     cursor: pointer;
-    z-index: 2;
+    z-index: 1;
 }
 
 #videoBtn {
@@ -48,9 +48,6 @@ body {
     cursor: pointer;
 }
 
-canvas{
-    pointer-events: none;
-}
 
 .birdGif {
     position: absolute;
@@ -102,7 +99,7 @@ canvas{
     /* CRITICAL: Ensures the navbar and shadow are rendered on top of content */
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 4;
     width: 100%;
     height: 80px;
 }
@@ -221,6 +218,7 @@ canvas{
     font-size: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    position: relative;
     z-index: 5;
 }
 
@@ -247,20 +245,6 @@ canvas{
     color: black;
 }
 
-.login-submit {
-    width: 100%;
-    background-color: #43a047;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.login-submit:hover {
-    background-color: #2e7d32;
-}
 
 .full-screen-menu {
     position: absolute;
@@ -279,7 +263,7 @@ canvas{
     /* Rounded corners only at the bottom */
     padding: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    z-index: 50;
+    z-index: 6;
     /* Higher than content (1) but lower than navbar (100) */
 
     /* Initial Animation State: Hidden above the 'top: 80px' line */
@@ -308,7 +292,7 @@ canvas{
     top: 10px;
     right: 20px;
     /* Position it on the top right of the menu box */
-    z-index: 2000;
+    z-index: 7;
     /* Keep it above the cards */
     background-color: #fcbe80 !important;
     color: white;
@@ -464,6 +448,6 @@ canvas{
         right: 10px;
         font-size: 0.9rem;
         padding: 6px 12px;
-        z-index: 2002;
+        z-index: 8;
     }
 }
