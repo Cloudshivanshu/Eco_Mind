@@ -7,3 +7,5 @@ def start(request):
     return render(request,'ecoconnect.html')
 def beginner(request):
     return render(request,'beginner.html')
+def game(request):
+    return render(request,'game.html')
