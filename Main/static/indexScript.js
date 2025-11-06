@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //bird animation
 const tree = document.querySelector('.overlay-gif1');
 const bird = document.querySelector('.birdGif');
+const sound = document.getElementById("birdSound");
 
 
 //tree animation
@@ -102,10 +103,11 @@ video.addEventListener("mousemove", (e) => {
     const alpha = pixel[3]; // transparency channel
 
     if (alpha > 10) {
-  
+
         video.classList.add("hovered");
         bird.style.display = 'block'; // show bird
         bird.classList.add('fly');
+        sound.play();//play audio
     } else {
         video.classList.remove("hovered");
     }
@@ -116,7 +118,21 @@ video.addEventListener("mouseleave", () => {
 });
 
 bird.addEventListener("animationend", () => {
-  
+
     bird.style.display = 'none';
     bird.classList.remove('fly');
 });
+
+document.addEventListener("click", () => {
+  const bgm = document.getElementById("calmBgm");
+  const birdBgm = document.getElementById("birdChirping");
+
+  bgm.loop = true;
+  bgm.volume = 0.3;
+  bgm.play();
+  
+  birdBgm.loop = true;
+  birdBgm.volume = 0.4;
+  birdBgm.play();
+
+})
