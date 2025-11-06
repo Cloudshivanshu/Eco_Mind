@@ -35,7 +35,7 @@ body {
     pointer-events: auto;
     /* now hover works */
     cursor: pointer;
-    z-index: 2004;
+    z-index: 2;
 }
 
 #videoBtn {
@@ -71,11 +71,11 @@ canvas{
     }
 
     50% {
-        transform: translate(-200px, -200px) scale(1);
+        transform: translate(-200px, -200px) scale(0.8);
     }
 
     100% {
-        transform: translate(-900px, -900px) scale(1);
+        transform: translate(-900px, -900px) scale(0.3);
         opacity: 1;
     } 
 }
@@ -89,10 +89,10 @@ canvas{
 }
 
 .top-navbar {
-    background: #039130c4;
+    background: #9103817d;
     padding: 8px 20px;
     /* Updated shadow for large, smooth blur that overlays the content */
-    box-shadow: 0 10px 30px rgb(0, 255, 98);
+    box-shadow: 0 10px 30px rgba(206, 2, 242, 0.846);
     flex-shrink: 0;
     /* Key change: Use flex to align children (logo and icon group) */
     display: flex;
@@ -211,7 +211,9 @@ canvas{
 }
 
 .start-btn {
-    background-color: #4caf4f;
+    position: relative;
+    background-color: #009688;
+    box-shadow: 0 10px 30px rgb(140, 52, 255);;
     color: white;
     border: none;
     border-radius: 10px;
@@ -223,7 +225,7 @@ canvas{
 }
 
 .start-btn:hover {
-    background-color: #2e7d32;
+    background-color: #017e87;
 }
 
 .modal-content input {
