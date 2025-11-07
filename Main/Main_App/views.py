@@ -4,7 +4,7 @@ from django.shortcuts import render,HttpResponse
 def index(request):
     return render(request,'index.html')
 def start(request):
-    return render(request,'ecoconnect.html')
+    return render(request,'levels.html')
 def beginner(request):
     return render(request,'beginner.html')
 def game(request):
