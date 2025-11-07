@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mode Selection</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<style>
+  .top-buttons {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 90%;
+    padding: 50px 80px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #backBtn {
+    cursor: pointer;
+    background: #4CAF50;
+    padding: 16px 28px;
+    border: none;
+    border-radius: 30%;
+    font-size: 26px;
+    box-shadow: 0 0 12px rgba(76, 175, 80, 0.8);
+    transition: 0.3s;
+  }
+
+  #backBtn:hover {
+    background: #4f9853;
+    box-shadow: 0 0 20px rgba(102, 187, 106, 1);
+  }
+</style>
+
 <body class="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-200 to-indigo-300">
+
+  <div class="top-buttons">
+    <a href="/">
+      <button id="backBtn">⬅️</button>
+    </a>
+  </div>
 
   <!-- Centered Box -->
   <div class="bg-white rounded-2xl shadow-xl p-8 w-80 text-center">
@@ -14,22 +49,22 @@
 
     <div class="space-y-4">
       <!-- Beginner -->
-       <a href = "/beginner">
-        <button 
+      <a href="/beginner">
+        <button
           class="w-full py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition duration-200">
           Beginner
         </button>
       </a>
 
       <!-- Intermediate -->
-      <button 
+      <button
         class="w-full py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-lg transition duration-200"
         onclick="selectMode('Intermediate', 'intermediate.html')">
         Intermediate
       </button>
 
       <!-- Master -->
-      <button 
+      <button
         class="w-full py-3 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg transition duration-200"
         onclick="selectMode('Master', 'master.html')">
         Master
@@ -43,7 +78,7 @@
     function selectMode(mode, page) {
       const output = document.getElementById('output');
       output.textContent = `You selected: ${mode} mode`;
-      
+
       // Wait a short moment before redirecting (optional)
       setTimeout(() => {
         window.location.href = page;
@@ -52,4 +87,5 @@
   </script>
 
 </body>
+
 </html>
