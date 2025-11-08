@@ -48,7 +48,7 @@ body {
     cursor: pointer;
 }
 
-canvas{
+canvas {
     pointer-events: none;
 }
 
@@ -77,13 +77,13 @@ canvas{
     100% {
         transform: translate(-900px, -900px) scale(0.3);
         opacity: 1;
-    } 
+    }
 }
 
-.squirel{
-     position: absolute;
-    top:108%;
-    left:3%;
+.squirel {
+    position: absolute;
+    top: 108%;
+    left: 3%;
     height: 50px;
     width: 50px;
 }
@@ -213,7 +213,8 @@ canvas{
 .start-btn {
     position: relative;
     background-color: #009688;
-    box-shadow: 0 10px 30px rgb(140, 52, 255);;
+    box-shadow: 0 10px 30px rgb(140, 52, 255);
+    ;
     color: white;
     border: none;
     border-radius: 10px;
@@ -226,6 +227,24 @@ canvas{
 
 .start-btn:hover {
     background-color: #017e87;
+}
+
+/* The toggle icon */
+.mode-icon {
+    position: absolute;
+    top: 110px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+    z-index: 49;
+    /* box-shadow:0 0 30px 10px rgb(255, 230, 1); */
+    border-radius: 50%;
+}
+
+.mode-icon:hover {
+    transform: scale(1.1) rotate(10deg);
 }
 
 .modal-content input {
@@ -247,25 +266,11 @@ canvas{
     color: black;
 }
 
-.login-submit {
-    width: 100%;
-    background-color: #43a047;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.login-submit:hover {
-    background-color: #2e7d32;
-}
 
 .full-screen-menu {
     position: absolute;
     /* Allows it to overlap content */
-    top: 120px;
+    top: 110px;
     /* Position it exactly below your 80px tall navbar */
     left: 0;
     width: 100%;
