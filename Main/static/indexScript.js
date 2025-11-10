@@ -136,3 +136,28 @@ document.addEventListener("click", () => {
   birdBgm.play();
 
 })
+
+// mode
+const modeIcon = document.getElementById("modeToggle");
+const dayBg = "/static/Assets/Images/environment.jpeg";
+const nightBg = "/static/Assets/Images/nightBG.png";
+const sunBtn = "/static/Assets/Images/sun.png";
+const moonBtn = "/static/Assets/Images/moonBtn.png";
+let isNight = false;
+
+modeIcon.addEventListener("click", () => {
+  isNight = !isNight;
+
+   document.body.style.backgroundImage = `url(${isNight ? nightBg : dayBg})`;
+
+  // Switch icon
+  modeIcon.src = isNight ? moonBtn : sunBtn;
+
+  const overlays = document.querySelectorAll(".overlay-gif, .overlay-gif1, .birdGif, .squirel");
+
+  overlays.forEach(el => {
+    // Dim them at night (alpha lower)
+    el.style.opacity = isNight ? "0.05" : "1";
+  });
+
+});
