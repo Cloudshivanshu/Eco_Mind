@@ -24,6 +24,7 @@ body {
     height: auto;
     pointer-events: none;
     /* ensures clicks pass through */
+
 }
 
 .overlay-gif1 {
@@ -36,6 +37,33 @@ body {
     /* now hover works */
     cursor: pointer;
     z-index: 2;
+}
+
+.nightTrees {
+    position: absolute;
+    top: 0%;
+    /* center vertically */
+    left: 0%;
+    /* center horizontally */
+    width: 100%;
+    /* adjust as you want */
+    height: auto;
+    pointer-events: none;
+    /* ensures clicks pass through */
+    display: none;
+}
+
+.leaves {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: auto;
+    pointer-events: auto;
+    /* now hover works */
+    cursor: pointer;
+    z-index: 2;
+    display: none;
 }
 
 #videoBtn {
@@ -88,7 +116,7 @@ canvas {
     width: 50px;
 }
 
-.owl{
+.owl {
     position: absolute;
     top: 80%;
     left: 90%;
