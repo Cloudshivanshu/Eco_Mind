@@ -88,6 +88,14 @@ canvas {
     width: 50px;
 }
 
+.owl{
+    position: absolute;
+    top: 80%;
+    left: 90%;
+    width: 120px;
+    /* display: none; */
+}
+
 .top-navbar {
     background: #9103817d;
     padding: 8px 20px;

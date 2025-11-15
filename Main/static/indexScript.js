@@ -26,10 +26,6 @@ window.onclick = function (event) {
     }
 }
 
-// document.addEventListener("DOMContentLoaded", function () {
-
-// });
-
 // 3. Menu Animation Logic
 document.addEventListener('DOMContentLoaded', () => {
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
@@ -102,15 +98,15 @@ video.addEventListener("mousemove", (e) => {
     const pixel = ctx.getImageData(x, y, 1, 1).data;
     const alpha = pixel[3]; // transparency channel
 
-    if (alpha > 10) {
-
+    if (!isNight && alpha > 10) {
         video.classList.add("hovered");
-        bird.style.display = 'block'; // show bird
+        bird.style.display = 'block';
         bird.classList.add('fly');
-        sound.play();//play audio
+        sound.play();
     } else {
         video.classList.remove("hovered");
     }
+
 });
 
 video.addEventListener("mouseleave", () => {
@@ -124,16 +120,30 @@ bird.addEventListener("animationend", () => {
 });
 
 document.addEventListener("click", () => {
-  const bgm = document.getElementById("calmBgm");
-  const birdBgm = document.getElementById("birdChirping");
+    const bgm = document.getElementById("calmBgm");
+    const birdBgm = document.getElementById("birdChirping");
+    const cricketBgm = document.getElementById("crickets");
 
-  bgm.loop = true;
-  bgm.volume = 0.3;
-  bgm.play();
-  
-  birdBgm.loop = true;
-  birdBgm.volume = 0.4;
-  birdBgm.play();
+    bgm.loop = true;
+    bgm.volume = 0.3;
+    bgm.play();
+
+    // First STOP all nature sounds
+    birdBgm.pause();
+    birdBgm.currentTime = 0;
+
+    cricketBgm.pause();
+    cricketBgm.currentTime = 0;
+
+    if (!isNight) {
+        birdBgm.loop = true;
+        birdBgm.volume = 0.4;
+        birdBgm.play();
+    } else {
+        cricketBgm.loop = true;
+        cricketBgm.volume = 0.9;
+        cricketBgm.play();
+    }
 
 })
 
@@ -146,18 +156,18 @@ const moonBtn = "/static/Assets/Images/moonBtn.png";
 let isNight = false;
 
 modeIcon.addEventListener("click", () => {
-  isNight = !isNight;
+    isNight = !isNight;
 
-   document.body.style.backgroundImage = `url(${isNight ? nightBg : dayBg})`;
+    document.body.style.backgroundImage = `url(${isNight ? nightBg : dayBg})`;
 
-  // Switch icon
-  modeIcon.src = isNight ? moonBtn : sunBtn;
+    // Switch icon
+    modeIcon.src = isNight ? moonBtn : sunBtn;
 
-  const overlays = document.querySelectorAll(".overlay-gif, .overlay-gif1, .birdGif, .squirel");
+    const overlays = document.querySelectorAll(".overlay-gif, .overlay-gif1, .squirel");
 
-  overlays.forEach(el => {
-    // Dim them at night (alpha lower)
-    el.style.opacity = isNight ? "0.05" : "1";
-  });
+    overlays.forEach(el => {
+        // Dim them at night (alpha lower)
+        el.style.opacity = isNight ? "0.05" : "1";
+    });
 
 });
