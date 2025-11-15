@@ -164,10 +164,25 @@ modeIcon.addEventListener("click", () => {
     modeIcon.src = isNight ? moonBtn : sunBtn;
 
     const overlays = document.querySelectorAll(".overlay-gif, .overlay-gif1, .squirel");
+    const overlaysNig = document.querySelectorAll(".nightTrees, .leaves");
 
-    overlays.forEach(el => {
-        // Dim them at night (alpha lower)
-        el.style.opacity = isNight ? "0.05" : "1";
-    });
+    if (!isNight) {
+        overlays.forEach(el => {
+            // console.log("hel")
+           el.style.display = 'block';
+        });
+        overlaysNig.forEach(el => {
+           el.style.display = 'none';
+        });
+    }else{
+        overlays.forEach(el => {
+            // console.log("hel")
+           el.style.display = 'none';
+        });
 
+        overlaysNig.forEach(el => {
+           el.style.display = 'block';
+        });
+    }
 });
+
