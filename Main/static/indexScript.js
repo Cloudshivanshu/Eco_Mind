@@ -164,25 +164,81 @@ modeIcon.addEventListener("click", () => {
     modeIcon.src = isNight ? moonBtn : sunBtn;
 
     const overlays = document.querySelectorAll(".overlay-gif, .overlay-gif1, .squirel");
-    const overlaysNig = document.querySelectorAll(".nightTrees, .leaves");
+    const overlaysNig = document.querySelectorAll(".nightTrees, .leaves, .owl");
 
     if (!isNight) {
         overlays.forEach(el => {
             // console.log("hel")
-           el.style.display = 'block';
+            el.style.display = 'block';
         });
         overlaysNig.forEach(el => {
-           el.style.display = 'none';
+            el.style.display = 'none';
         });
-    }else{
+    } else {
         overlays.forEach(el => {
             // console.log("hel")
-           el.style.display = 'none';
+            el.style.display = 'none';
         });
 
         overlaysNig.forEach(el => {
-           el.style.display = 'block';
+            el.style.display = 'block';
         });
     }
 });
 
+// owl video
+const owlVideo = document.getElementById("OGowl");
+const owlCanvas = document.createElement("canvas");
+const owlCtx = owlCanvas.getContext("2d");
+let owlPlaying = false;  
+let owlVideoLoaded = false;
+const owlSound = document.getElementById("owl");
+
+// When owl video is ready
+owlVideo.addEventListener("loadeddata", () => {
+    owlCanvas.width = owlVideo.videoWidth;
+    owlCanvas.height = owlVideo.videoHeight;
+    owlVideoLoaded = true;
+    console.log("OWL VIDEO READY");
+});
+
+// Owl hover logic
+owlVideo.addEventListener("mousemove", (e) => {
+
+    if (!isNight) return;           // ONLY WORK IN NIGHT MODE
+    if (!owlVideoLoaded) return;
+
+    const rect = owlVideo.getBoundingClientRect();
+    const scaleX = owlVideo.videoWidth / rect.width;
+    const scaleY = owlVideo.videoHeight / rect.height;
+
+    const x = (e.clientX - rect.left) * scaleX;
+    const y = (e.clientY - rect.top) * scaleY;
+
+    // Draw current video frame
+    owlCtx.drawImage(owlVideo, 0, 0, owlCanvas.width, owlCanvas.height);
+
+    const pixel = owlCtx.getImageData(x, y, 1, 1).data;
+    const alpha = pixel[3];
+
+    if (alpha > 10) {
+        owlVideo.classList.add("hovered");
+         if (!owlPlaying) {
+            owlPlaying = true;     // lock
+            owlSound.currentTime = 0;
+            owlSound.volume = 0.7;
+            owlSound.play();
+        }
+    } else {
+        owlPlaying = false;  
+         owlVideo.classList.remove("hovered");
+        owlSound.pause();
+    }
+});
+
+// Stop sound on leave
+owlVideo.addEventListener("mouseleave", () => {
+    owlSound.pause();
+            owlPlaying = false;  
+
+});
