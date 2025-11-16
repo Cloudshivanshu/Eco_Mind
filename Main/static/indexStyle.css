@@ -51,6 +51,7 @@ body {
     pointer-events: none;
     /* ensures clicks pass through */
     display: none;
+    
 }
 
 .leaves {
@@ -61,9 +62,14 @@ body {
     height: auto;
     pointer-events: auto;
     /* now hover works */
-    cursor: pointer;
+    /* cursor: pointer; */
     z-index: 2;
     display: none;
+}
+
+#OGowl.hovered {
+    filter: brightness(1.4);
+    cursor: pointer;
 }
 
 #videoBtn {
@@ -118,10 +124,12 @@ canvas {
 
 .owl {
     position: absolute;
-    top: 80%;
-    left: 90%;
-    width: 120px;
-    /* display: none; */
+    top: 54%;
+    left: 89%;
+    width: 100px;
+    display: none;
+    z-index:49;
+    /* cursor: pointer; */
 }
 
 .top-navbar {
