@@ -9,3 +9,5 @@ def beginner(request):
     return render(request,'beginner.html')
 def game(request):
     return render(request,'game.html')
+def shop(request):
+    return render(request,'marketPlace.html')
