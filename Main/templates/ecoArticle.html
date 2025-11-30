@@ -1,0 +1,197 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Eco Articles</title>
+
+    <!-- Optional: Google font (uncomment if you want) -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&display=swap" rel="stylesheet"> -->
+
+    <!-- Link the CSS file -->
+    <link rel="stylesheet" href="{% static 'ecoArticle.css' %}" />
+</head>
+
+<body>
+    <header class="page-header">
+        <a href="/">
+            <button id="backBtn">⬅️</button>
+        </a>
+        <div class="title-group">
+            <h1>Latest from NGOs</h1>
+            <p class="subtitle">Curated eco articles from top organisations</p>
+        </div>
+    </header>
+    <main class="container">
+
+        <section class="article-list" aria-label="Articles">
+            <!-- Article item (repeat this block for each article) -->
+            <article class="article-item">
+                <a class="thumb" href="#" aria-hidden="true">
+                    <img src="{% static 'Assets/Images/forestFire.jpg' %}" alt="forestFire" />
+                </a>
+
+                <div class="content">
+                    <div class="tags">
+                        <span class="tag">#Forests</span>
+                        <span class="tag">#Climate</span>
+                        <span class="tag">#Fire</span>
+                    </div>
+
+                    <h2 class="title"><a href="https://www.nature.org/en-us/about-us/where-we-work/united-states/minnesota/stories-in-minnesota/fire-in-the-forest/" target="_blank">
+                        Why we need good fire in the Northwoods</a></h2>
+
+                    <p class="excerpt">
+                        Prescribed fire can help us regain control over when and how Minnesota’s 
+                        forests burn, protecting communities and creating a healthier forest.
+                    </p>
+
+                    <div class="meta">
+                        <span class="author">The Nature Conservancy</span>
+                        <span class="dot">•</span>
+                        <time datetime="2025-11-08">23 Sep 2025</time>
+                        <span class="dot">•</span>
+                        <span class="readtime">5 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article-item">
+                <a class="thumb" href="#" aria-hidden="true">
+                    <img src="{% static 'Assets/Images/potraitForest.jpg' %}" alt="potrait forest" />
+                </a>
+
+                <div class="content">
+                    <div class="tags">
+                        <span class="tag">Stories</span>
+                        <span class="tag">#Forests</span>
+                        <span class="tag">#Climate</span>
+                    </div>
+
+                    <h2 class="title"><a href="https://www.nature.org/en-us/about-us/where-we-work/united-states/western-dry-forest-and-fire/western-dry-forests-fires-stories/restoration-transforming-forests/" target="_blank">
+                        From Overgrowth to Renewal</a></h2>
+
+                    <p class="excerpt">How restoration is transforming western dry forests.</p>
+
+                    <div class="meta">
+                        <span class="author">The Nature Conservancy</span>
+                        <span class="dot">•</span>
+                        <time datetime="2025-11-06">16 Oct 2025</time>
+                        <span class="dot">•</span>
+                        <span class="readtime">10 min read</span>
+                    </div>
+                </div>
+            </article>
+            <article class="article-item">
+                <a class="thumb" href="#" aria-hidden="true">
+                    <img src="{% static 'Assets/Images/turtle.webp' %}" alt="potrait forest" />
+                </a>
+
+                <div class="content">
+                    <div class="tags">
+                        <span class="tag">#Sea</span>
+                        <span class="tag">#Rescue</span>
+                    </div>
+
+                    <h2 class="title"><a href="https://www.worldwildlife.org/news/stories/toward-fair-and-sustainable-seas-a-practical-guide-for-equitable-marine-conservation/" target="_blank">
+                        Toward fair and sustainable seas</a></h2>
+
+                    <p class="excerpt">How restoration is transforming western dryA practical guide for equitable marine conservation.</p>
+
+                    <div class="meta">
+                        <span class="author">WWF</span>
+                        <span class="dot">•</span>
+                        <time datetime="2025-11-06">14 Nov 2025</time>
+                        <span class="dot">•</span>
+                        <span class="readtime">4 min read</span>
+                    </div>
+                </div>
+            </article>
+            <article class="article-item">
+                <a class="thumb" href="#" aria-hidden="true">
+                    <img src="{% static 'Assets/Images/amazonPollution.jpg' %}" alt="potrait forest" />
+                </a>
+
+                <div class="content">
+                    <div class="tags">
+                        <span class="tag">#Amazon</span>
+                        <span class="tag">#Fire</span>
+                        <span class="tag">#Pollution</span>
+                        <span class="tag">#Climate</span>
+                    </div>
+
+                    <h2 class="title"><a href="https://www.greenpeace.org/international/story/79467/toxic-skies-the-amazon-is-now-breathing-dirtier-air-than-the-worlds-biggest-cities/?_gl=1*1qsufth*_up*MQ..*_ga*MTE4MTg1NDI1NS4xNzY0NDgzNzE0*_ga_94MRTN8HG4*czE3NjQ0OTM3ODEkbzIkZzAkdDE3NjQ0OTM4OTMkajEzJGwwJGgxOTQ4ODMwMjg1" target="_blank">
+                        The Amazon is now breathing dirtier air than the world’s biggest cities</a></h2>
+
+                    <p class="excerpt">Fires in the Amazon region are caused by human activity and are highly destructive to the rainforest ecosystem.</p>
+
+                    <div class="meta">
+                        <span class="author">GREENPEACE</span>
+                        <span class="dot">•</span>
+                        <time datetime="2025-11-06">4 Nov 2025</time>
+                        <span class="dot">•</span>
+                        <span class="readtime">4 min read</span>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="article-item">
+                <a class="thumb" href="#" aria-hidden="true">
+                    <img src="{% static 'Assets/Images/artic.avif' %}" alt="potrait forest" />
+                </a>
+
+                <div class="content">
+                    <div class="tags">
+                        <span class="tag">#Climate</span>
+                        <span class="tag">#Artic</span>
+                        <span class="tag">#Wildlife</span>
+                    </div>
+
+                    <h2 class="title"><a href="https://www.greenpeace.org/international/publication/7366/climate-change-impacts-on-arctic-wildlife/?_gl=1*1nzc11y*_up*MQ..*_ga*NTU2MDU1MDkxLjE3NjQ0OTQ2Nzg.*_ga_94MRTN8HG4*czE3NjQ0OTQ2NzckbzEkZzAkdDE3NjQ0OTUyNTckajM2JGwwJGg4MDI4MTU2NTE." target="_blank">
+                        Climate Change Impacts on Arctic Wildlife</a></h2>
+
+                    <p class="excerpt">The shorter season of the temporary sea ice is now impacting on several species of Arctic animals. PDF</p>
+
+                    <div class="meta">
+                        <span class="author">GREENPEACE International</span>
+                        <span class="dot">•</span>
+                        <time datetime="2025-11-06">27 Aug 2012</time>
+                        <span class="dot">•</span>
+                        <span class="readtime">10 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article-item">
+                <a class="thumb" href="#" aria-hidden="true">
+                    <img src="{% static 'Assets/Images/15BiggestProblem.webp' %}" alt="15 problem" />
+                </a>
+
+                <div class="content">
+                    <div class="tags">
+                        <span class="tag">#Climate Change</span>
+                        <span class="tag">#Global Warming</span>
+                    </div>
+
+                    <h2 class="title"><a href="https://earth.org/the-biggest-environmental-problems-of-our-lifetime/?utm_source=chatgpt.com" target="_blank">
+                        15 Biggest Environmental Problems of 2025</a></h2>
+
+                    <p class="excerpt">From climate change-induced disasters to biodiversity loss and plastic pollution, the 15 biggest environmental problems of 2025 paint a stark picture of the urgent need for climate change mitigation and adaptation.</p>
+
+                    <div class="meta">
+                        <span class="author">EARTH.Org</span>
+                        <span class="dot">•</span>
+                        <time datetime="2025-11-06">9 Jan 2025</time>
+                        <span class="dot">•</span>
+                        <span class="readtime">17 min read</span>
+                    </div>
+                </div>
+            </article>
+            <!-- add more article-item blocks as needed -->
+        </section>
+    </main>
+</body>
+
+</html>

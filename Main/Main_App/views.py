@@ -11,3 +11,5 @@ def game(request):
     return render(request,'game.html')
 def shop(request):
     return render(request,'marketPlace.html')
+def article(request):
+    return render(request,'ecoArticle.html')
