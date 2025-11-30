@@ -6,6 +6,6 @@ urlpatterns = [
     # path('start/',views.start,name = 'start'),
     path('beginner/',views.beginner,name = 'beginner'),
     path('start/',views.game,name = 'game'),
-    path('shop/',views.shop,name = 'shop')
-
+    path('shop/',views.shop,name = 'shop'),
+    path('article/',views.article,name = 'article')
 ]
