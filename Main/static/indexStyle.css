@@ -330,7 +330,8 @@ canvas {
 }
 
 .mode-icon:hover {
-    transform: scale(1.1) rotate(10deg);
+    /* transform: scale(1.1) rotate(10deg); */
+    transform: rotateY(180deg);
 }
 
 .modal-content input {
@@ -411,6 +412,7 @@ canvas {
     font-family: 'Comic Neue', cursive;
     box-shadow: 0 4px #66ffcc;
     transition: all 0.3s;
+    cursor: pointer;
 }
 
 .close-menu-button:active {
