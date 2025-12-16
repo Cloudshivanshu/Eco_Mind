@@ -1,22 +1,31 @@
+const musicImg = document.getElementById("music");
+const soundImg = document.getElementById("sound");
 
-function openLogin() {
-    document.getElementById('loginModal').style.display = 'flex';
-}
+let music = true;
+let sound = true;
 
-function closeLogin() {
-    document.getElementById('loginModal').style.display = 'none';
-}
+const musicOn = "/static/Assets/Images/music.png";
+const musicOff = "/static/Assets/Images/mute_music.png";
 
-function login() {
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-    if (username === '' || password === '') {
-        alert('Please fill in both fields.');
-    } else {
-        alert(`Welcome, ${username}!`);
-        closeLogin();
+const soundOn = "/static/Assets/Images/sound.png";
+const soundOff = "/static/Assets/Images/mute_sound.png";
+
+// Toggle music
+musicImg.addEventListener("click", () => {
+    music = !music; // toggle
+    musicImg.src = music ? musicOn : musicOff;
+    const bgm = document.getElementById("calmBgm");
+    if (!music) {
+        bgm.pause();
+        bgm.currentTime = 0;
     }
-}
+});
+
+// Toggle sound
+soundImg.addEventListener("click", () => {
+    sound = !sound; // toggle
+    soundImg.src = sound ? soundOn : soundOff;
+});
 
 // Close modal on outside click
 window.onclick = function (event) {
@@ -66,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //bird animation
 const tree = document.querySelector('.overlay-gif1');
 const bird = document.querySelector('.birdGif');
-const sound = document.getElementById("birdSound");
+const Bsound = document.getElementById("birdSound");
 
 
 //tree animation
@@ -102,7 +111,9 @@ video.addEventListener("mousemove", (e) => {
         video.classList.add("hovered");
         bird.style.display = 'block';
         bird.classList.add('fly');
-        sound.play();
+        if(sound == true){
+            Bsound.play();
+        }
     } else {
         video.classList.remove("hovered");
     }
@@ -126,8 +137,11 @@ document.addEventListener("click", () => {
 
     bgm.loop = true;
     bgm.volume = 0.3;
-    bgm.play();
 
+    if(music == true){
+       bgm.play(); 
+    }
+    
     // First STOP all nature sounds
     birdBgm.pause();
     birdBgm.currentTime = 0;
@@ -138,11 +152,17 @@ document.addEventListener("click", () => {
     if (!isNight) {
         birdBgm.loop = true;
         birdBgm.volume = 0.4;
-        birdBgm.play();
+        if(sound == true){
+            birdBgm.play();
+        }
+        
     } else {
         cricketBgm.loop = true;
         cricketBgm.volume = 0.9;
-        cricketBgm.play();
+        if(sound == true){
+           cricketBgm.play();
+        }
+        
     }
 
 })
@@ -190,7 +210,7 @@ modeIcon.addEventListener("click", () => {
 const owlVideo = document.getElementById("OGowl");
 const owlCanvas = document.createElement("canvas");
 const owlCtx = owlCanvas.getContext("2d");
-let owlPlaying = false;  
+let owlPlaying = false;
 let owlVideoLoaded = false;
 const owlSound = document.getElementById("owl");
 
@@ -223,15 +243,18 @@ owlVideo.addEventListener("mousemove", (e) => {
 
     if (alpha > 10) {
         owlVideo.classList.add("hovered");
-         if (!owlPlaying) {
+        if (!owlPlaying) {
             owlPlaying = true;     // lock
             owlSound.currentTime = 0;
             owlSound.volume = 0.7;
-            owlSound.play();
+            if(sound == true){
+                owlSound.play();
+            }
+            
         }
     } else {
-        owlPlaying = false;  
-         owlVideo.classList.remove("hovered");
+        owlPlaying = false;
+        owlVideo.classList.remove("hovered");
         owlSound.pause();
     }
 });
@@ -239,6 +262,6 @@ owlVideo.addEventListener("mousemove", (e) => {
 // Stop sound on leave
 owlVideo.addEventListener("mouseleave", () => {
     owlSound.pause();
-            owlPlaying = false;  
+    owlPlaying = false;
 
 });
