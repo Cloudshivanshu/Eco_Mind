@@ -330,8 +330,42 @@ canvas {
 }
 
 .mode-icon:hover {
+    transform: scale(1.1) rotate(10deg);
+    /* transform: rotateY(180deg); */
+}
+
+.sound-icon:active {
     /* transform: scale(1.1) rotate(10deg); */
     transform: rotateY(180deg);
+}
+.music-icon:active {
+    /* transform: scale(1.1) rotate(10deg); */
+    transform: rotateY(180deg);
+}
+
+.sound-icon {
+    position: absolute;
+    top: 110px;
+    left: 15px;
+    width: 60px; 
+    height: 60px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+    z-index: 49;
+    /* box-shadow:0 0 30px 10px rgb(255, 230, 1); */
+    border-radius: 50%;
+}
+.music-icon {
+    position: absolute;
+    top: 110px;
+    left: 80px;
+    width: 60px; 
+    height: 60px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+    z-index: 49;
+    /* box-shadow:0 0 30px 10px rgb(255, 230, 1); */
+    border-radius: 50%;
 }
 
 .modal-content input {
