@@ -22,5 +22,7 @@ urlpatterns = [
     path('',include("Main_App.urls")),
     path('start/',include("Main_App.urls")),
     path('beginner/',include("Main_App.urls")),
-    path('game/',include("Main_App.urls"))
+    path('game/',include("Main_App.urls")),
+    path('create_profile/',include("Main_App.urls")),
+    path('show_profile/',include("Main_App.urls"))
 ]
