@@ -1,1 +1,2 @@
-Main/__pycache__/, Main_App/__pycache__/
+__pycache__/
+*.pyc
