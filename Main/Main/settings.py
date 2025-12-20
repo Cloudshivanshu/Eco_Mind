@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ecomind',
         'USER': 'root',
-        'PASSWORD': '290422',
+        'PASSWORD': 'Password123',
         'HOST': 'localhost',
         'PORT': '3306',
     }
