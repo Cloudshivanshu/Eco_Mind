@@ -24,5 +24,6 @@ urlpatterns = [
     path('beginner/',include("Main_App.urls")),
     path('game/',include("Main_App.urls")),
     path('create_profile/',include("Main_App.urls")),
-    path('show_profile/',include("Main_App.urls"))
+    path('show_profile/',include("Main_App.urls")),
+    path('shop/',include("Main_App.urls"))
 ]

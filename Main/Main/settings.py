@@ -26,7 +26,11 @@ SECRET_KEY = 'django-insecure-*qh%#vo+73ce&fx%7t868#%#%*9d+5)7j43g+xxm@#4qw6q3kp
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+MIDDLEWARE = [
+    'django.middleware.cache.UpdateCacheMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
+]
 
 # Application definition
 
@@ -129,3 +133,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+MIDDLEWARE.insert(0, "Main.middleware.DisableCacheMiddleware")

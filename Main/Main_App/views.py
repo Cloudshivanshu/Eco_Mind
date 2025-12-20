@@ -23,3 +23,7 @@ def create_profile(request):
 def show_profile(request):
     profiles = players.objects.all()
     return render(request, "show_profile.html", {"profiles": profiles})
+def shop(request):
+    return render(request,'marketPlace.html')
+def article(request):
+    return render(request,'ecoArticle.html')

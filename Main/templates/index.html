@@ -44,7 +44,7 @@
         <p>Learn about our mission to educate and inspire the next generation of environmentalists.</p>
       </div>
 
-      <a href="#" class="menu-card small-card">
+      <a href="shop/" class="menu-card small-card">
         <span class="card-icon"><i class="bi bi-shop"></i></span>
         <h4>Eco Mind MarketPlace</h4>
         <p>Grab the essentials to save the Earth.</p>
@@ -68,7 +68,7 @@
         <p>----N/A----</p>
       </a>
 
-      <a href="#" class="menu-card small-card">
+      <a href="article" class="menu-card small-card">
         <span class="card-icon"><i class="bi bi-journal-text"></i></span>
         <h4>Eco Articles</h4>
         <p>Learn the top articles published by top organisations.</p>
@@ -87,10 +87,9 @@
   <video autoplay loop muted playsinline src="{% static 'Assets/Images/trees.webm' %}" class="overlay-gif"
     alt="Animated trees"></video>
 
-    <!-- <img src="{% static 'Assets/Images/owl.gif' %}" class="owl" alt="owlGif"> -->
-<video autoplay loop muted playsinline src="{% static 'Assets/Images/newOwl.webm' %}" class="owl" id="OGowl"
+  <video autoplay loop muted playsinline src="{% static 'Assets/Images/newOwl.webm' %}" class="owl" id="OGowl"
     alt="owl"></video>
-    <video autoplay loop muted playsinline src="{% static 'Assets/Images/night_trees.webm' %}" class="nightTrees"
+  <video autoplay loop muted playsinline src="{% static 'Assets/Images/night_trees.webm' %}" class="nightTrees"
     alt="Animated trees"></video>
 
   <img src="{% static 'Assets/Images/bird.gif' %}" alt="bird-gif" class="birdGif">
@@ -98,7 +97,7 @@
   <video autoplay loop muted playsinline src="{% static 'Assets/Images/tree.webm' %}" class="overlay-gif1" id="videoBtn"
     alt="Animated tree"></video>
 
-    <video autoplay loop muted playsinline src="{% static 'Assets/Images/leaves.webm' %}" class="leaves" 
+  <video autoplay loop muted playsinline src="{% static 'Assets/Images/leaves.webm' %}" class="leaves"
     alt="Animated tree"></video>
 
   <img src="{% static 'Assets/Images/newsquirel.gif' %}" class="squirel" alt="squirelGif">
@@ -109,9 +108,13 @@
   <audio id="crickets" src="{% static 'Assets/Sound/cricket.mp3' %}" preload="auto"></audio>
   <audio id="owl" src="{% static 'Assets/Sound/owl-hooting.mp3' %}" preload="auto"></audio>
 
-
-
   <div class="start-section">
+    <div class="intro">
+      <P id="upperLine">START YOUR </P>
+      <p id="middleLine"> EcoMind Journey<p>
+      <P id="lowerLine">CARVE YOUR WAY TOWARDS BETTER WORLD</P>
+    </div>
+
     <a href="/start">
       <button class="start-btn">Let's Begin</button>
     </a>
@@ -119,6 +122,8 @@
 
   <!-- Mode toggle icon -->
   <img id="modeToggle" src="{% static 'Assets/Images/sun.png' %}" alt="Toggle Mode" class="mode-icon">
+  <img id="sound" src="{% static 'Assets/Images/sound.png' %}" alt="Toggle Mode" class="sound-icon">
+  <img id="music" src="{% static 'Assets/Images/music.png' %}" alt="Toggle Mode" class="music-icon">
 
   <script src="{% static 'indexScript.js' %}"></script>
 
