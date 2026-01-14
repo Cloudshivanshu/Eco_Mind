@@ -13,3 +13,5 @@ def shop(request):
     return render(request,'marketPlace.html')
 def article(request):
     return render(request,'ecoArticle.html')
+def contribute(request):
+    return render(request,'contribute.html')

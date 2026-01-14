@@ -1,0 +1,39 @@
+[33m6d5163c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: pull: Fast-forward
+[33m9a809d1[m HEAD@{1}: commit: sound & music btn
+[33md210f78[m[33m ([m[1;31mupstream/shivanshu[m[33m)[m HEAD@{2}: merge upstream/shivanshu: Fast-forward
+[33m9b68669[m HEAD@{3}: checkout: moving from 7dec8237c94c46967612c7239a5c14a229077d06 to main
+[33m7dec823[m HEAD@{4}: commit: eco-article2
+[33m04d2c1b[m HEAD@{5}: pull origin main --rebase (start): checkout 04d2c1b44a25adcd03263a0f7e976d12809b6b1a
+[33m9b68669[m HEAD@{6}: commit: Eco-Articles
+[33m27611ec[m HEAD@{7}: commit: home-page content & shop back-btn
+[33md83b5c4[m HEAD@{8}: commit: marketplace
+[33m488f611[m HEAD@{9}: reset: moving to 488f611
+[33m60a24b5[m[33m ([m[1;31mupstream/main[m[33m, [m[1;31mupstream/HEAD[m[33m)[m HEAD@{10}: pull origin main: Fast-forward
+[33m488f611[m HEAD@{11}: commit: owl hover and audio
+[33mbcd9d6e[m HEAD@{12}: pull origin main: Fast-forward
+[33mbd2dafb[m HEAD@{13}: commit: animated bg for night mode
+[33mbe12ac6[m HEAD@{14}: commit: owl
+[33m93405e5[m HEAD@{15}: pull origin main: Fast-forward
+[33m7ea5642[m HEAD@{16}: commit: night mode bug fix
+[33mf711ae5[m HEAD@{17}: commit: night mode
+[33m1b9bc4d[m HEAD@{18}: merge sound: Fast-forward
+[33mb129f8c[m HEAD@{19}: checkout: moving from sound to main
+[33m1b9bc4d[m HEAD@{20}: commit: improved file struct & back and home btn
+[33me531723[m HEAD@{21}: pull origin main: Fast-forward
+[33m0f9febe[m[33m ([m[1;31morigin/sound[m[33m)[m HEAD@{22}: reset: moving to HEAD
+[33m0f9febe[m[33m ([m[1;31morigin/sound[m[33m)[m HEAD@{23}: commit: sound effects and lil improvments
+[33mb129f8c[m HEAD@{24}: checkout: moving from main to sound
+[33mb129f8c[m HEAD@{25}: commit: tree hover animation and squirel
+[33m0741f4d[m HEAD@{26}: commit: bird animation
+[33mf06df38[m HEAD@{27}: commit: new animated bg
+[33me958243[m HEAD@{28}: pull origin main: Fast-forward
+[33mc0d937d[m HEAD@{29}: commit: navbar and menubtn
+[33m56fb650[m HEAD@{30}: pull origin main: Fast-forward
+[33mc36ff63[m HEAD@{31}: commit: menu btn resp and Proceed
+[33m8c2191b[m HEAD@{32}: commit: more button
+[33maf872b1[m HEAD@{33}: commit: made responsive,added Ambition section
+[33mebfb7f0[m HEAD@{34}: reset: moving to origin/main
+[33m22988a9[m HEAD@{35}: pull --rebase origin main (finish): returning to refs/heads/main
+[33m22988a9[m HEAD@{36}: pull --rebase origin main (pick): first push
+[33mbfeb683[m HEAD@{37}: pull --rebase origin main (start): checkout bfeb683b125042efb38def9ef639ace4177d4f8e
+[33mad4691c[m HEAD@{38}: commit (initial): first push

@@ -7,5 +7,6 @@ urlpatterns = [
     path('beginner/',views.beginner,name = 'beginner'),
     path('start/',views.game,name = 'game'),
     path('shop/',views.shop,name = 'shop'),
-    path('article/',views.article,name = 'article')
+    path('article/',views.article,name = 'article'),
+    path('contribute/',views.contribute,name = 'contribute')
 ]
