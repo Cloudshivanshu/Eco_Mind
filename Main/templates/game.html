@@ -4,11 +4,40 @@
 <head>
     <title>Play Ren'Py Game</title>
 </head>
+<style>
+     #tester {
+      position: absolute;
+      top: 5%;
+      left: 90%;
+      display: block;
+      margin: auto;
+      width: 10%;
+      height: 10%;
+      object-fit: contain;
+    }
+</style>
 <body style="margin:0;background:black;">
+    {% comment %} <a href='/'>
+        <img id="tester" src="{% static 'main_game/main_home_button.png' %}" alt="water">
+    </a> {% endcomment %}
     <iframe 
         src="{% static 'main_game/index.html' %}"
         style="border:none;width:100vw;height:100vh;"
         allowfullscreen>
     </iframe>
+    <script>
+    window.addEventListener("message", function(e) {
+        // Optional: security check:
+        // if (e.origin !== window.location.origin) return;
+
+            const data = e.data || {};
+            if (data && data.type === "renpy_quit") {
+            const target = data.url || "/";
+            // navigate same tab
+            window.location.href = target;
+            }
+        }, false);
+    </script>
+
 </body>
 </html>

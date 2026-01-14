@@ -33,11 +33,13 @@
       font-family: sans-serif;
     }
 
-    body, html {
+    body,
+    html {
       overscroll-behavior: none;
     }
 
-    #canvas, #overlayDiv {
+    #canvas,
+    #overlayDiv {
       position: absolute;
       top: 0px;
       left: 0px;
@@ -64,7 +66,8 @@
       transition: visibility 0s .25s, opacity .25s linear;
     }
 
-    #statusDiv, #inputDiv {
+    #statusDiv,
+    #inputDiv {
       background: rgba(0, 0, 0, 0.75);
       width: 50%;
       margin: auto;
@@ -168,16 +171,15 @@
     }
 
     #presplash {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: block;
-        margin: auto;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
-
   </style>
 
 </head>
@@ -188,6 +190,8 @@
 
   <img id="presplash" src="web-presplash.png">
 
+
+
   <div id="ContextContainer">
     <a id="ContextButton">&#8801;</a><br />
     <div id="ContextMenu" style="display: none;">
@@ -197,7 +201,7 @@
       <a href="javascript:onSavegamesExport();">Export Saves</a>
       <a href="javascript:FSDownload('/log.txt', 'text/plain');">Download Log</a>
       <a href="https://www.renpy.org/" target="_blank">
-          Powered by Ren'Py
+        Powered by Ren'Py
       </a>
       </span>
     </div>
@@ -216,15 +220,20 @@
   </div>
 
   <script>
-      // The URL to game.zip, relative to the URL of this file.
-      window.gameZipURL = 'game.zip';
+    // The URL to game.zip, relative to the URL of this file.
+    window.gameZipURL = 'game.zip';
 
-      // Register the service worker.
-      if (navigator.serviceWorker) {
-          if (!navigator.serviceWorker.controller) {
-              navigator.serviceWorker.register('./service-worker.js', { updateViaCache: 'all' });
-          }
+    // Register the service worker.
+    if (navigator.serviceWorker) {
+      if (!navigator.serviceWorker.controller) {
+        navigator.serviceWorker.register('./service-worker.js', { updateViaCache: 'all' });
       }
+    }
+
+    const backBtn = document.getElementById("tester")
+    backBtn.addEventListener("click", function () {
+      window.location.href = "https://google.com";
+    });
   </script>
   <script src="renpy-pre.js"></script>
   <script async type="text/javascript" src="renpy.js"></script>
